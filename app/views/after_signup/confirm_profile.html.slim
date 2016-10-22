@@ -1,0 +1,6 @@
+h1 プロフィールを完成しましょう。
+
+= bootstrap_form_for @user, url: wizard_path, method: :patch do |f|
+  = f.text_field :name
+  = f.submit '保存して、次にステップへ進む', class: 'btn btn-primary'
+  = link_to "スキップ", next_wizard_path, class: "btn btn-default"

@@ -1,0 +1,6 @@
+h1 サインアップ有難うございます！
+
+= bootstrap_form_for @user, url: wizard_path, method: :patch do |f|
+  = f.text_field :line_token, label: 'LINEアカウントをリンクしましょう', placeholder: 'line token'
+  = f.submit '次のステップ', class: 'btn btn-primary'
+  = link_to 'スキップ', next_wizard_path

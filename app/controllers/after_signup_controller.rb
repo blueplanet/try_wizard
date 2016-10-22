@@ -13,9 +13,11 @@ class AfterSignupController < ApplicationController
 
   def update
     @user = current_user
-    @user.update user_params
-
-    render_wizard @user
+    if @user.update user_params
+      render_wizard @user
+    else
+      render step
+    end
   end
 
   private

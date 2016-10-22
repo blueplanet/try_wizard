@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :line_token, length: { maximum: 140, minium: 10 }
+  validates :line_token, presence: true
+  validates :name, presence: true
 end
